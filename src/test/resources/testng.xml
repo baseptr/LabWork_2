@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="InfoHandlerTestSuite" verbose="1">
+    <test name="ComponentTests">
+        <classes>
+            <class name="lt.esdc.infohandler.component.CompositeComponentTests"/>
+        </classes>
+    </test>
+
+    <test name="InterpreterTests">
+        <classes>
+            <class name="lt.esdc.infohandler.interpreter.InterpreterTests"/>
+        </classes>
+    </test>
+
+    <test name="ParserTests">
+        <classes>
+            <class name="lt.esdc.infohandler.parser.ParserTests"/>
+        </classes>
+    </test>
+
+    <test name="ServiceTests">
+        <classes>
+            <class name="lt.esdc.infohandler.service.ServiceTests"/>
+        </classes>
+    </test>
+
+    <test name="IntegrationTests">
+        <classes>
+            <class name="lt.esdc.infohandler.integration.IntegrationTests"/>
+        </classes>
+    </test>
+</suite>
