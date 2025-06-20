@@ -6,18 +6,20 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.Long.parseLong;
+
 public class BitwiseEvaluator {
     private static final String WHITESPACE_REGEX = "\\s+";
 
     private static final String NOT = "~";
-    private static final String SHIFT_LEFT = "<<";
-    private static final String SHIFT_RIGHT = ">>";
     private static final String AND = "&";
     private static final String XOR = "^";
     private static final String OR = "|";
 
     private static final String LEFT_PAREN = "(";
     private static final String RIGHT_PAREN = ")";
+    private static final String SHIFT_LEFT = "<<";
+    private static final String SHIFT_RIGHT = ">>";
 
     private static final Map<String, Integer> PRECEDENCE = Map.of(
             NOT, 3,
@@ -115,7 +117,7 @@ public class BitwiseEvaluator {
                     long b = stack.pop(), a = stack.pop();
                     stack.push(a ^ b);
                 }
-                default -> stack.push(Long.parseLong(token));
+                default -> stack.push(parseLong(token));
             }
         }
         return stack.pop();

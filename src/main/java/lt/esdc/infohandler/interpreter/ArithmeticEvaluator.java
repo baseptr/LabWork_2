@@ -6,6 +6,8 @@ import java.util.Deque;
 import java.util.List;
 import java.util.StringTokenizer;
 
+import static java.lang.Double.parseDouble;
+
 public class ArithmeticEvaluator {
     private static final String TOKEN_DELIMITERS = "+-*/() ";
     private static final String NUMBER_REGEX = "\\d+(\\.\\d+)?";
@@ -95,7 +97,7 @@ public class ArithmeticEvaluator {
                     double b = stack.pop(), a = stack.pop();
                     stack.push(a / b);
                 }
-                default -> stack.push(Double.parseDouble(token));
+                default -> stack.push(parseDouble(token));
             }
         }
         return stack.pop();
